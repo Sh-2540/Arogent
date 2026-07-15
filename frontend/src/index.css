@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/*
+ * Arogent Design System
+ * =====================
+ * A clinical-instrument aesthetic: calm, high-contrast, unflashy. Every
+ * color and type decision here is deliberate — see the module docstring
+ * in the team notes for the reasoning. Do not add ad-hoc colors in
+ * components; extend this file instead so the whole app stays coherent.
+ */
+
+@theme {
+  /* --- Color: Primary (medical blue) --- */
+  --color-primary-50: #EAF2FA;
+  --color-primary-100: #CFE2F3;
+  --color-primary-200: #A3C7E8;
+  --color-primary-400: #4A85C4;
+  --color-primary-600: #1D5FA3;
+  --color-primary-700: #164A80;
+  --color-primary-900: #0D2C4D;
+
+  /* --- Color: Success --- */
+  --color-success-50: #E9F7EF;
+  --color-success-100: #CBEBD9;
+  --color-success-600: #1F8556;
+  --color-success-700: #196C46;
+
+  /* --- Color: Warning --- */
+  --color-warning-50: #FCF3E3;
+  --color-warning-100: #F7E2BB;
+  --color-warning-600: #B7791F;
+  --color-warning-700: #93611A;
+
+  /* --- Color: Danger --- */
+  --color-danger-50: #FBEAEC;
+  --color-danger-100: #F4C8CD;
+  --color-danger-600: #C1293B;
+  --color-danger-700: #9C1F2E;
+
+  /* --- Color: Neutral (slate) --- */
+  --color-neutral-50: #F8FAFC;
+  --color-neutral-100: #F1F5F9;
+  --color-neutral-200: #E2E8F0;
+  --color-neutral-300: #CBD5E1;
+  --color-neutral-400: #94A3B8;
+  --color-neutral-500: #64748B;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-900: #0F172A;
+
+  /* --- Type --- */
+  --font-display: "Lexend", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-neutral-50);
+  color: var(--color-neutral-900);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+.font-data {
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Visible keyboard focus everywhere — non-negotiable for a healthcare tool */
+:focus-visible {
+  outline: 2px solid var(--color-primary-600);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
